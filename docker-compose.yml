@@ -1,0 +1,11 @@
+services:
+  postgresql-order:
+    image: postgres:17.0
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2123
+      POSTGRES_DB: order-service
+    volumes:
+      - ./data:/db/data
