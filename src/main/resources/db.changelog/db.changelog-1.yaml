@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id:  create-table-order
+      author:  Arrelin
+      labels: init-label
+      context: first migration
+      comment: pls work
+      changes:
+        - createTable:
+            tableName:  orders
+            columns:
+              - column:
+                  name:  id
+                  type:  bigint
+                  autoIncrement:  true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  order_number
+                  type:  varchar(255)
+                  constraints:
+                    nullable:  false
+              - column:
+                  name:  sku_code
+                  type:  text
+                  constraints:
+                    nullable: false
+              - column:
+                  name:  price
+                  type:  decimal(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name:  quantity
+                  type:  int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id:  insert-into-orders
+      author:  Arrelin
+      labels: init-label
+      context: first migration
+      comment: pls work
+      changes:
+        - insert:
+            tableName:  orders
+            columns:
+              - column:
+                  name:  id
+                  value:  1
+              - column:
+                  name:  order_number
+                  value:  'Arrelin'
+              - column:
+                  name:  sku_code
+                  value:  'A cool guy'
+              - column:
+                  name:  price
+                  value: 320000.00
+              - column:
+                  name:  quantity
+                  value: 1
