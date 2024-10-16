@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.arrelin.order.service.OrderService;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/order")
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
