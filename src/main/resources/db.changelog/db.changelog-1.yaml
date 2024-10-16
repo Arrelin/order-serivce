@@ -54,7 +54,7 @@ databaseChangeLog:
                   value:  'Iph133264'
               - column:
                   name:  price
-                  value: 320.00
+                  value: '320.00'
               - column:
                   name:  quantity
-                  value: 1223
+                  value: '1223'

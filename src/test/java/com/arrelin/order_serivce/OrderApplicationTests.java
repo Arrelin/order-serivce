@@ -1,11 +1,13 @@
 package com.arrelin.order_serivce;
 
+import com.arrelin.order_serivce.stubs.InventoryClientStub;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.context.annotation.Import;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,6 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest(classes = com.arrelin.order.OrderApplication.class
 		, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureWireMock(port = 0)
 class OrderApplicationTests {
 
 	@LocalServerPort
@@ -33,6 +36,9 @@ class OrderApplicationTests {
                     "price": 1000.00,
                     "quantity": 2
                 }""";
+
+		//utilizing useless mockito tests
+		InventoryClientStub.stubInventoryCall("Iph133264", 2);
 
 		var response = RestAssured.given()
 				.contentType("application/json")
