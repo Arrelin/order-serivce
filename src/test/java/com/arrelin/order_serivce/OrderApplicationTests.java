@@ -29,9 +29,8 @@ class OrderApplicationTests {
 	void shouldCreateOrder() {
 		String orderRequest = """
                 {
-                    "orderNumber": "ORD123",
-                    "skuCode": "123",
-                    "price": 100,
+                    "skuCode": "Iph133264",
+                    "price": 1000.00,
                     "quantity": 2
                 }""";
 

@@ -48,13 +48,13 @@ databaseChangeLog:
             columns:
               - column:
                   name:  order_number
-                  value:  'Arrelin'
+                  value:  'ORD3213'
               - column:
                   name:  sku_code
-                  value:  'A cool guy'
+                  value:  'Iph133264'
               - column:
                   name:  price
-                  value: 320000.00
+                  value: 320.00
               - column:
                   name:  quantity
-                  value: 1
+                  value: 1223

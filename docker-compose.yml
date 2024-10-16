@@ -2,7 +2,7 @@ services:
   postgresql-order:
     image: postgres:17.0
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 2123
