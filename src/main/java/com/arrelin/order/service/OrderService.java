@@ -23,7 +23,7 @@ public class OrderService {
     public void placeOrder(OrderRequest orderRequest) {
         log.info("Checking for stock availability for product with SkuCode: '{}' and quantity of '{}'"
                 , orderRequest.skuCode(), orderRequest.quantity());
-        var isProductInStock = inventoryClient.isIntStock(orderRequest.skuCode(), orderRequest.quantity());
+        var isProductInStock = inventoryClient.isInStock(orderRequest.skuCode(), orderRequest.quantity());
 
         if (isProductInStock) {
             log.info("Product with SkuCode: '{}' is in stock. Placing order now...", orderRequest.skuCode());

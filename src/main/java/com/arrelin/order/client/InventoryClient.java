@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface InventoryClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/inventory")
-    boolean isIntStock(@RequestParam String skuCode, @RequestParam Integer quantity);
+    boolean isInStock(@RequestParam String skuCode, @RequestParam Integer quantity);
 }
